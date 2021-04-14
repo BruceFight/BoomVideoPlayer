@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		006B94942971E4CE01FFF713 /* Pods_BoomVideoPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC45A2EFC0A6013978A32DD /* Pods_BoomVideoPlayer.framework */; };
 		2A5981B02625D00900C19E1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5981AF2625D00900C19E1A /* AppDelegate.swift */; };
 		2A5981B22625D00900C19E1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5981B12625D00900C19E1A /* SceneDelegate.swift */; };
 		2A5981B42625D00900C19E1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5981B32625D00900C19E1A /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A213D632627071500C8929A /* ReachabilitySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReachabilitySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A5981AC2625D00900C19E1A /* BoomVideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoomVideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A5981AF2625D00900C19E1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A5981B12625D00900C19E1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +57,9 @@
 		2A5981E52625D05600C19E1A /* BoomVideoPlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoomVideoPlayerController.swift; sourceTree = "<group>"; };
 		2A5981EA2625D07200C19E1A /* BoomVideoPlayerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoomVideoPlayerControlView.swift; sourceTree = "<group>"; };
 		2A5981FB2625D3AF00C19E1A /* BoomReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoomReachability.swift; sourceTree = "<group>"; };
+		49E0DFF106B2DFAC722C1D6A /* Pods-BoomVideoPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoomVideoPlayer.release.xcconfig"; path = "Target Support Files/Pods-BoomVideoPlayer/Pods-BoomVideoPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		EAC45A2EFC0A6013978A32DD /* Pods_BoomVideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoomVideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F088230EB2C226129E22D376 /* Pods-BoomVideoPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoomVideoPlayer.debug.xcconfig"; path = "Target Support Files/Pods-BoomVideoPlayer/Pods-BoomVideoPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				006B94942971E4CE01FFF713 /* Pods_BoomVideoPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +95,8 @@
 				2A5981C52625D00B00C19E1A /* BoomVideoPlayerTests */,
 				2A5981D02625D00B00C19E1A /* BoomVideoPlayerUITests */,
 				2A5981AD2625D00900C19E1A /* Products */,
+				4D2C92184333E40276B1BF2B /* Pods */,
+				88AB46E563A613469270C19D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +145,24 @@
 			path = BoomVideoPlayerUITests;
 			sourceTree = "<group>";
 		};
+		4D2C92184333E40276B1BF2B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F088230EB2C226129E22D376 /* Pods-BoomVideoPlayer.debug.xcconfig */,
+				49E0DFF106B2DFAC722C1D6A /* Pods-BoomVideoPlayer.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		88AB46E563A613469270C19D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A213D632627071500C8929A /* ReachabilitySwift.framework */,
+				EAC45A2EFC0A6013978A32DD /* Pods_BoomVideoPlayer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +170,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A5981D62625D00B00C19E1A /* Build configuration list for PBXNativeTarget "BoomVideoPlayer" */;
 			buildPhases = (
+				B7412DAA014A27EA3721BBDC /* [CP] Check Pods Manifest.lock */,
 				2A5981A82625D00900C19E1A /* Sources */,
 				2A5981A92625D00900C19E1A /* Frameworks */,
 				2A5981AA2625D00900C19E1A /* Resources */,
+				904C8D8D0259E441195F41F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -261,6 +289,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		904C8D8D0259E441195F41F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BoomVideoPlayer/Pods-BoomVideoPlayer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BoomVideoPlayer/Pods-BoomVideoPlayer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BoomVideoPlayer/Pods-BoomVideoPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7412DAA014A27EA3721BBDC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BoomVideoPlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2A5981A82625D00900C19E1A /* Sources */ = {
@@ -445,6 +515,7 @@
 		};
 		2A5981D72625D00B00C19E1A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F088230EB2C226129E22D376 /* Pods-BoomVideoPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -464,6 +535,7 @@
 		};
 		2A5981D82625D00B00C19E1A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49E0DFF106B2DFAC722C1D6A /* Pods-BoomVideoPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

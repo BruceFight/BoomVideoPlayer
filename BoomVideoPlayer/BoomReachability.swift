@@ -7,27 +7,26 @@
 
 
 import UIKit
-//import ReachabilitySwift
+import ReachabilitySwift
 
-enum JB_NetworkType {
-    case JB_NetworkTypeWiFi
-    case JB_NetworkTypeWWAN
-    case JB_NetworkTypeNone
+enum BoomNetworkType {
+    case BoomNetworkTypeWiFi
+    case BoomNetworkTypeWWAN
+    case BoomNetworkTypeNone
 }
 
 class BoomReachability: NSObject {
-/*
-    public static let instance   = BoomReachability()
-    fileprivate var reachability = Reachability()
-    public var netorkStatusCallBack : ((_ isEnable:Bool,_ networkType:JB_NetworkType) -> Void)?
+
+    public static let instance = BoomReachability()
+    private var reachability = Reachability()
+    public var reachable: Bool = false
+    public var networkType: BoomNetworkType?
+    public var networkStatusCallBack: ((_ isEnable: Bool, _ networkType: BoomNetworkType) -> Void)?
     
-    public var reachable = Bool()
-    public var networkType : JB_NetworkType?
-    // 开始监听网络
+    /// 开始监听网络
     func startNotifier() {
-        guard let reachability = Reachability.init() else{return}
+        guard let reachability = Reachability() else { return }
         self.reachability = reachability
-        
         do {
             try reachability.startNotifier()
             NotificationCenter.default.addObserver(self, selector: #selector(getCurrentNetwork), name: ReachabilityChangedNotification, object: nil)
@@ -36,38 +35,32 @@ class BoomReachability: NSObject {
         }
     }
     
-    // 获取网络状态及类型
+    /// 获取网络状态及类型
     @objc func getCurrentNetwork() {
         // 检测网络连接状态
-        guard let reachable = self.reachability?.isReachable else {
-            return
-        }
-        self.reachable = reachable
+        guard let _reachable = self.reachability?.isReachable else { return }
+        self.reachable = _reachable
         
+        _reachable ? print("网络连接：可用") : print("网络连接：不可用")
         
-        if (self.reachability?.isReachable)! {
-            print("网络连接：可用")
-        } else {
-            print("网络连接：不可用")
-        }
-        
+        guard let _reachability = self.reachability else { return }
         // 检测网络类型
-        if (self.reachability?.isReachableViaWiFi)! {
+        if (_reachability.isReachableViaWiFi) {
             print("网络类型：Wifi")
-            networkType = JB_NetworkType.JB_NetworkTypeWiFi
-        } else if (self.reachability?.isReachableViaWWAN)! {
+            networkType = BoomNetworkType.BoomNetworkTypeWiFi
+        } else if (_reachability.isReachableViaWWAN) {
             print("网络类型：移动网络")
-            networkType = JB_NetworkType.JB_NetworkTypeWWAN
+            networkType = BoomNetworkType.BoomNetworkTypeWWAN
         } else {
             print("网络类型：无网络连接")
-            networkType = JB_NetworkType.JB_NetworkTypeNone
+            networkType = BoomNetworkType.BoomNetworkTypeNone
         }
         
         guard let networkT = networkType else {
             return
         }
         self.networkType = networkT
-        netorkStatusCallBack?(reachable,self.networkType!)
+        networkStatusCallBack?(_reachable, networkT)
     }
- */
+ 
 }

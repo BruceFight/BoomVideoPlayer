@@ -32,6 +32,8 @@ class ViewController: UIViewController {
         button.setTitle("进入播放视频", for: .normal)
         button.addTarget(self, action: #selector(click), for: UIControlEvents.touchUpInside)
         self.view.addSubview(button)
+        
+        BoomReachability.instance.startNotifier()
     }
     
     override func viewWillLayoutSubviews() {

@@ -10,14 +10,14 @@ import UIKit
 
 class BoomVideoPlayerControlView: UIView {
 
-    private var playBtn   = UIButton()
-    private var pauseBtn  = UIButton()
+    private var playBtn = UIButton()
+    private var pauseBtn = UIButton()
     public var bufferView = UIProgressView()
     public var sliderView = UISlider()
     public var currentTimeLabel = UILabel()
     public var totalTimeLabel = UILabel()
-    var controlButtonClickedHandler : ((_ button:UIButton) -> Void)?
-    var progressChangedHandler : ((_ slider:UISlider) -> Void)?
+    var controlButtonClickedHandler: ((_ button:UIButton) -> Void)?
+    var progressChangedHandler: ((_ slider:UISlider) -> Void)?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,16 +43,16 @@ class BoomVideoPlayerControlView: UIView {
     private func configureSubviews() {
         self.backgroundColor = UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6)
         playBtn.tag = 100
-        playBtn.setTitle("Play", for: UIControl.State.normal)
-        playBtn.setTitleColor(UIColor.white, for: UIControlState.normal)
+        playBtn.setTitle("Play", for: .normal)
+        playBtn.setTitleColor(.white, for: .normal)
         playBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
-        playBtn.addTarget(self, action: #selector(contentBtnClicked(btn:)), for: UIControlEvents.touchUpInside)
+        playBtn.addTarget(self, action: #selector(contentBtnClicked(btn:)), for: .touchUpInside)
           
         pauseBtn.tag = 200
-        pauseBtn.setTitle("Pause", for: UIControlState.normal)
-        pauseBtn.setTitleColor(UIColor.white, for: UIControlState.normal)
+        pauseBtn.setTitle("Pause", for: .normal)
+        pauseBtn.setTitleColor(.white, for: .normal)
         pauseBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
-        pauseBtn.addTarget(self, action: #selector(contentBtnClicked(btn:)), for: UIControlEvents.touchUpInside)
+        pauseBtn.addTarget(self, action: #selector(contentBtnClicked(btn:)), for: .touchUpInside)
         
         self.addSubview(playBtn)
         self.addSubview(pauseBtn)
@@ -61,17 +61,17 @@ class BoomVideoPlayerControlView: UIView {
         bufferView.trackTintColor = .red
         self.addSubview(bufferView)
         
-        sliderView.addTarget(self, action: #selector(changeProgress), for: UIControlEvents.valueChanged)
+        sliderView.addTarget(self, action: #selector(changeProgress), for: .valueChanged)
         self.addSubview(sliderView)
         
-        currentTimeLabel.font = UIFont.systemFont(ofSize: 12)
+        currentTimeLabel.font = .systemFont(ofSize: 12)
         currentTimeLabel.text = "00'00\""
-        currentTimeLabel.textColor = UIColor.white
+        currentTimeLabel.textColor = .white
         
-        totalTimeLabel.font = UIFont.systemFont(ofSize: 12)
+        totalTimeLabel.font = .systemFont(ofSize: 12)
         totalTimeLabel.text = "00'00\""
         totalTimeLabel.textAlignment = .right
-        totalTimeLabel.textColor = UIColor.white
+        totalTimeLabel.textColor = .white
         
         self.addSubview(currentTimeLabel)
         self.addSubview(totalTimeLabel)

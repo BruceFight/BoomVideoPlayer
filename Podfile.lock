@@ -1,0 +1,16 @@
+PODS:
+  - ReachabilitySwift (3)
+
+DEPENDENCIES:
+  - ReachabilitySwift (~> 3)
+
+SPEC REPOS:
+  trunk:
+    - ReachabilitySwift
+
+SPEC CHECKSUMS:
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+
+PODFILE CHECKSUM: 2af05d0ecfd4c3c8cc750904b9c793bcf0b7aafa
+
+COCOAPODS: 1.10.1
